@@ -27,6 +27,8 @@ public class DataLoad{
     var speed = 0
     var generation = 0
     var legend = ""
+    var imageHeight = 0
+    
     
     
     init(path:String){
@@ -76,14 +78,33 @@ public class DataLoad{
             }
             let imageStr = "https://img.pokemondb.net/sprites/silver/normal/" + pokeName + ".png"
             let pokeImage = URL(string: imageStr)
-            let data = try? Data(contentsOf: pokeImage!)
             var image: UIImageView!
-            if let imageData = data {
-                image = UIImageView(image: UIImage(data: imageData))
-                poke.insert(Pokemon(number: number, name: name, type1: type1, type2: type2, total: total, hp: hp, attack: attack, defense: defense, sAttack: sAttack, sDefense: sDefense, speed: speed, generation: generation, legend: legend, image: image),at: i-1)
-                print(name)
+//            let imageCache = NSCache<AnyObject, AnyObject>()
+            //let imageToCache :UIImageView
+//            URLSession.shared.dataTask(with: pokeImage!){
+//                data, response, error in
+//                let data = try? Data(contentsOf: pokeImage!)
+//                if let response = data{
+//                    DispatchQueue.main.async {
+//                        let imageToCache = UIImage(data: data!)
+//                        imageCache.setObject(imageToCache!, forKey: pokeImage as AnyObject)
+//                        image = UIImageView(image: imageToCache)
+//                    }
+//                }
+//            }.resume()
+//          poke.insert(Pokemon(number: number, name: name, type1: type1, type2: type2, total: total, hp: hp, attack: attack, defense: defense, sAttack: sAttack, sDefense: sDefense, speed: speed, generation: generation, legend: legend, image: image),at: i-1)
+                let data = try? Data(contentsOf: pokeImage!)
+                if let imageData = data {
+                    image = UIImageView(image: UIImage(data: imageData))
+                    let heightInPixels = image.frame.height
+                    if(Int(heightInPixels) > imageHeight){
+                        imageHeight = Int(heightInPixels)
+                    }
+                    poke.insert(Pokemon(number: number, name: name, type1: type1, type2: type2, total: total, hp: hp, attack: attack, defense: defense, sAttack: sAttack, sDefense: sDefense, speed: speed, generation: generation, legend: legend, image: image),at: i-1)
+                    print(name)
+                }
             }
-        }
         return poke
     }
 }
+

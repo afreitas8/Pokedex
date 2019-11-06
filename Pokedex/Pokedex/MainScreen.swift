@@ -38,7 +38,11 @@ class MainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource{
         self.view.addSubview(button)
     }
     
-   
+    //This function sets the height for each cell in the table view
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height = 100
+        return CGFloat(data.imageHeight + 10)//Choose your custom row height
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         print("Num: \(indexPath.row)")
