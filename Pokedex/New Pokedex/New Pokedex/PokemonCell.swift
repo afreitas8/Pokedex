@@ -33,6 +33,8 @@ public class PokemonCell: UITableViewCell {
             self.typeOneLabel.image = UIImage(named: typeOne)
             if(typeTwo != ""){
                 self.typeTwoLabel.image = UIImage(named: typeTwo)
+            } else{
+                self.typeTwoLabel.image = nil
             }
             self.pokeImageLabel.image = pokemon?.pokeImage.image
             
