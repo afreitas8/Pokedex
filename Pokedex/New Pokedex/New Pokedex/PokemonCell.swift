@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+ Custom UITableViewCell to display the number, name, types and picture of a pokemon in the datasource
+ */
+
 public class PokemonCell: UITableViewCell {
     
     var pokemon: Pokemon?{
@@ -51,14 +55,12 @@ public class PokemonCell: UITableViewCell {
         
     private let typeOneLabel: UIImageView = {
         let imageView = UIImageView()
-//        let imageView = UIImageView(image: #imageLiteral(resourceName: "Fire"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let typeTwoLabel: UIImageView = {
         let imageView = UIImageView()
-//        let imageView = UIImageView(image: #imageLiteral(resourceName: "Flying"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
 
@@ -66,7 +68,6 @@ public class PokemonCell: UITableViewCell {
     
     private let pokeImageLabel: UIImageView = {
         let imageView = UIImageView()
-        //let imageView = UIImageView(image: #imageLiteral(resourceName: "charizard"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

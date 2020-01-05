@@ -49,6 +49,10 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let pokemon = self.pokemon[indexPath.row]
+        let pokemonController = PokemonViewController()
+        pokemonController.pokemon = pokemon
+        let navController = UINavigationController(rootViewController: pokemonController)
+        present(navController, animated: true, completion: nil)
         print(pokemon.name)
     }
     
