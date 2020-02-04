@@ -74,24 +74,32 @@ public class PokemonViewController: UIViewController {
         let speedLabelValue = UILabel()
         let totalLabelValue = UILabel()
         
-        let healthLabelBox = UILabel()
-        healthLabelBox.backgroundColor = .red
-        healthLabelBox.text = " "
-        let attackLabelBox = UILabel()
-        attackLabelBox.backgroundColor = .orange
-        attackLabelBox.text = " "
-        let defenseLabelBox = UILabel()
-        defenseLabelBox.backgroundColor = .yellow
-        defenseLabelBox.text = " "
-        let sAttackLabelBox = UILabel()
-        sAttackLabelBox.backgroundColor = .cyan
-        sAttackLabelBox.text = " "
-        let sDefenseLabelBox = UILabel()
-        sDefenseLabelBox.backgroundColor = .green
-        sDefenseLabelBox.text = " "
-        let speedLabelBox = UILabel()
-        speedLabelBox.backgroundColor = .systemPink
-        speedLabelBox.text = " "
+        //Switched from label -> UIImageView and now it doesnt work
+//        let healthLabelBox = UILabel()
+//        healthLabelBox.backgroundColor = .red
+//        healthLabelBox.layer.cornerRadius = 12
+//        let attackLabelBox = UILabel()
+//        attackLabelBox.backgroundColor = .orange
+//        attackLabelBox.layer.cornerRadius = 12
+//        let defenseLabelBox = UILabel()
+//        defenseLabelBox.backgroundColor = .yellow
+//        defenseLabelBox.layer.cornerRadius = 12
+//        let sAttackLabelBox = UILabel()
+//        sAttackLabelBox.backgroundColor = .cyan
+//        sAttackLabelBox.layer.cornerRadius = 12
+//        let sDefenseLabelBox = UILabel()
+//        sDefenseLabelBox.backgroundColor = .green
+//        sDefenseLabelBox.layer.cornerRadius = 12
+//        let speedLabelBox = UILabel()
+//        speedLabelBox.backgroundColor = .systemPink
+//        speedLabelBox.layer.cornerRadius = 12
+        
+        let healthLabelBox = UIImageView(color: .red)
+        let attackLabelBox = UIImageView(color: .orange)
+        let defenseLabelBox = UIImageView(color: .yellow)
+        let sAttackLabelBox = UIImageView(color:.cyan)
+        let sDefenseLabelBox = UIImageView(color: .green)
+        let speedLabelBox = UIImageView(color: .systemPink)
 
         
         
